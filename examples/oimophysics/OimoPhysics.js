@@ -4665,7 +4665,7 @@ oimo.collision.narrowphase.detector.BoxBoxDetector = class oimo_collision_narrow
 			c12Z = -c12Z;
 
 
-			b2 = b1;
+
 
 			w1 = w2;
 
@@ -4675,9 +4675,9 @@ oimo.collision.narrowphase.detector.BoxBoxDetector = class oimo_collision_narrow
 
 			d1 = d2;
 
-			tmpX = c1X;
-			tmpY = c1Y;
-			tmpZ = c1Z;
+
+
+
 			c1X = c2X;
 			c1Y = c2Y;
 			c1Z = c2Z;
@@ -18708,7 +18708,7 @@ oimo.dynamics.common.DebugDraw = class oimo_dynamics_common_DebugDraw {
 		_this2.x *= radiusX;
 		_this2.y *= radiusX;
 		_this2.z *= radiusX;
-		ex = _this2;
+
 		let _this3 = this.p;
 		let _this4 = _this3.sizeVec3 == 0 ? new oimo.common.Vec3() : _this3.stackVec3[--_this3.sizeVec3];
 		_this4.x = ey.x;
@@ -26440,10 +26440,10 @@ oimo.dynamics.constraint.joint.RagdollJoint = class oimo_dynamics_constraint_joi
 		swingVX *= invLen * this._swingAngle;
 		swingVY *= invLen * this._swingAngle;
 		swingVZ *= invLen * this._swingAngle;
-		let __tmp__X1;
+
 		let __tmp__Y1;
 		let __tmp__Z1;
-		__tmp__X1 = basis1Mat00 * swingVX + basis1Mat10 * swingVY + basis1Mat20 * swingVZ;
+
 		__tmp__Y1 = basis1Mat01 * swingVX + basis1Mat11 * swingVY + basis1Mat21 * swingVZ;
 		__tmp__Z1 = basis1Mat02 * swingVX + basis1Mat12 * swingVY + basis1Mat22 * swingVZ;
 
