@@ -1,4 +1,4 @@
-// 4.0
+// 4.1
 
 var oimo = oimo || {};
 if(!oimo.collision) oimo.collision = {};
@@ -14210,7 +14210,7 @@ oimo.common.Mat4 = class oimo_common_Mat4 {
 		this.e20 = this.e20 * r00 + this.e21 * r10 + this.e22 * r20;
 		this.e21 = e21;
 		this.e22 = e22;
-		
+
 		this.e30 = this.e30 * r00 + this.e31 * r10 + this.e32 * r20;
 		this.e31 = e31;
 		this.e32 = e32;
