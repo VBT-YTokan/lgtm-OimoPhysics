@@ -1,3 +1,4 @@
+// 4.0
 var oimo = oimo || {};
 if(!oimo.collision) oimo.collision = {};
 if(!oimo.collision.broadphase) oimo.collision.broadphase = {};
