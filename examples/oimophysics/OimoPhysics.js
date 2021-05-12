@@ -1855,7 +1855,7 @@ oimo.collision.broadphase.bvh.BvhStrategy = class oimo_collision_broadphase_bvh_
 			let newArea = ((combinedMaxX - combinedMinX) * (ey1 + ez1) + ey1 * ez1) * 2;
 			let creatingCost = newArea * 2;
 			let incrementalCost = (newArea - ((currentNode._aabbMaxX - currentNode._aabbMinX) * (ey + ez) + ey * ez) * 2) * 2;
-			let descendingCost1 = incrementalCost;
+			let descendingCost1;
 			combinedMinX = c11._aabbMinX < leaf._aabbMinX ? c11._aabbMinX : leaf._aabbMinX;
 			combinedMinY = c11._aabbMinY < leaf._aabbMinY ? c11._aabbMinY : leaf._aabbMinY;
 			combinedMinZ = c11._aabbMinZ < leaf._aabbMinZ ? c11._aabbMinZ : leaf._aabbMinZ;
@@ -1873,7 +1873,7 @@ oimo.collision.broadphase.bvh.BvhStrategy = class oimo_collision_broadphase_bvh_
 				let ez1 = c11._aabbMaxZ - c11._aabbMinZ;
 				descendingCost1 = incrementalCost + (((combinedMaxX - combinedMinX) * (ey + ez) + ey * ez) * 2 - ((c11._aabbMaxX - c11._aabbMinX) * (ey1 + ez1) + ey1 * ez1) * 2);
 			}
-			let descendingCost2 = incrementalCost;
+			let descendingCost2;
 			combinedMinX = c21._aabbMinX < leaf._aabbMinX ? c21._aabbMinX : leaf._aabbMinX;
 			combinedMinY = c21._aabbMinY < leaf._aabbMinY ? c21._aabbMinY : leaf._aabbMinY;
 			combinedMinZ = c21._aabbMinZ < leaf._aabbMinZ ? c21._aabbMinZ : leaf._aabbMinZ;
@@ -2721,7 +2721,7 @@ oimo.collision.geometry.CapsuleGeometry = class oimo_collision_geometry_CapsuleG
 		let dx = endX - beginX;
 		let dz = endZ - beginZ;
 		let tminxz = 0;
-		let tmaxxz = 1;
+		let tmaxxz;
 		let a = dx * dx + dz * dz;
 		let b = beginX * dx + beginZ * dz;
 		let c = beginX * beginX + beginZ * beginZ - this._radius * this._radius;
@@ -2962,7 +2962,7 @@ oimo.collision.geometry.ConeGeometry = class oimo_collision_geometry_ConeGeometr
 		out.z = rz * invLen;
 	}
 	_rayCastLocal(beginX,beginY,beginZ,endX,endY,endZ,hit) {
-		let p1y = beginY;
+		let p1y;
 		let halfH = this._halfHeight;
 		let dx = endX - beginX;
 		let dy = endY - beginY;
@@ -3386,7 +3386,7 @@ oimo.collision.geometry.CylinderGeometry = class oimo_collision_geometry_Cylinde
 			return false;
 		}
 		let tminxz = 0;
-		let tmaxxz = 1;
+		let tmaxxz;
 		let a = dx * dx + dz * dz;
 		let b = beginX * dx + beginZ * dz;
 		let c = beginX * beginX + beginZ * beginZ - this._radius * this._radius;
@@ -19547,7 +19547,7 @@ oimo.dynamics.common.DebugDraw = class oimo_dynamics_common_DebugDraw {
 			let _g1 = 0;
 			while(_g1 < 8) {
 				let i = _g1++;
-				let v1 = _this7;
+				let v1;
 				let v2 = this.tmpCircleVerts1[i];
 				let v3 = this.tmpCircleVerts1[(i + 1) % 8];
 				let n1 = ey;
@@ -29730,7 +29730,7 @@ oimo.dynamics.constraint.solver.direct.MassMatrix = class oimo_dynamics_constrai
 		let _g3 = this._maxSubmatrixId;
 		while(_g2 < _g3) {
 			let i = _g2++;
-			let t = i;
+			let t;
 			t = (i & 85) + (i >> 1 & 85);
 			t = (t & 51) + (t >> 2 & 51);
 			t = (t & 15) + (t >> 4 & 15);
